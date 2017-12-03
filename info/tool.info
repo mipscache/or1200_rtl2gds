@@ -1,0 +1,9 @@
+Simulation:   CADENCE incisive 15.10
+Debug:        SYNOPSYS Verdi 2016
+Synthesis:    SYNOPSYS Design Compiler 2016
+STA:          SYNOPSYS PrimeTime 2016
+DFT & MBIST:  MENTOR Tessent 2015, SYNOPSYS TetraMax 2016
+Formal Check: SYNOPSYS Formality 2016
+Milkway:      SYNOPSYS Milkway 2016
+Layout:       SYNOPSYS IC Compiler 2016
+DRC:          CADENCE Calibre 2015
