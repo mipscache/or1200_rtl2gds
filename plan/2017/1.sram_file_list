@@ -5,3 +5,4 @@ or1200_ic_tag.v
 or1200_immu_tlb.v
 or1200_qmem_top.v
 or1200_rf.v
+or1200_du.v
