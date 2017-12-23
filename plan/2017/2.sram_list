@@ -1,0 +1,42 @@
+| location        |   part      |   port   | width |   depth   | we_width |   description               |
+|-----------------|-------------|----------|-------|-----------|----------|-----------------------------|
+| Reg file(rf.v)  | RegFile-A   |twoport-A |  5bit |    32bit  |          |                             |  
+| Reg file(rf.v)  | RegFile-A   |twoport-B |  5bit |    32bit  |          |                             |  
+|~~~~~~~~~~~~~~~~~|~~~~~~~~~~~~~|~~~~~~~~~~|~~~~~~~|~~~~~~~~~~~|~~~~~~~~~~|                             |
+| Reg file(rf.v)  | RegFile-B   |twoport-A |  5bit |    32bit  |          |                             |  
+| Reg file(rf.v)  | RegFile-B   |twoport-B |  5bit |    32bit  |          | ifdef OR1200_RFRAM_TWOPORT  |  
+|-----------------|-------------|----------|-------|-----------|----------|-----------------------------|
+| Reg file(rf.v)  | RegFile-A   |twoport-A |  5bit |    32bit  |          |                             |  
+| Reg file(rf.v)  | RegFile-A   |twoport-B |  5bit |    32bit  |          |                             |  
+|~~~~~~~~~~~~~~~~~|~~~~~~~~~~~~~|~~~~~~~~~~|~~~~~~~|~~~~~~~~~~~|~~~~~~~~~~|                             |
+| Reg file(rf.v)  | RegFile-B   |twoport-A |  5bit |    32bit  |          |                             |  
+| Reg file(rf.v)  | RegFile-B   |twoport-B |  5bit |    32bit  |          | ifdef OR1200_RFRAM_DUALPORT |  
+|-----------------|-------------|----------|-------|-----------|----------|-----------------------------|
+| Reg file(rf.v)  | RegFile-A   |twoport-A |  5bit |    32bit  |          |                             |  
+| Reg file(rf.v)  | RegFile-A   |twoport-B |  5bit |    32bit  |          |                             |  
+|~~~~~~~~~~~~~~~~~|~~~~~~~~~~~~~|~~~~~~~~~~|~~~~~~~|~~~~~~~~~~~|~~~~~~~~~~| ifdef OR1200_RFRAM_GENERIC  |
+| Reg file(rf.v)  | RegFile-B   |twoport-A |  5bit |    32bit  |          |                             |  
+| Reg file(rf.v)  | RegFile-B   |twoport-B |  5bit |    32bit  |          |                             |  
+|-----------------|-------------|----------|-------|-----------|----------|-----------------------------|
+|ITLB(immu_tlb.v) |             | Signal   | 14bit | 2^6 = 64  |   1bit   | Match Registers of ITLB     |             
+|ITLB(immu_tlb.v  |             | Signal   | 22bit | 2^6 = 64  |   1bit   | Translate Registers of ITLB |
+|-----------------|-------------|----------|-------|-----------|----------|-----------------------------|
+|DTLB(dmmu_tlb.v) |             | Signal   | 14bit | 2^6 = 64  |   1bit   | Match Registers of DTLB     | 
+|DTLB(dmmu_tlb.v) |             | Signal   | 24bit | 2^6 = 64  |   1bit   | Translate Registers of DTLB | 
+|-----------------|-------------|----------|-------|-----------|----------|-----------------------------|
+|QMEM(qmem_top.v) |             | Signal   | 32bit | 2^11=2048 |   1bit   | ram for quick memory        |
+|-----------------|-------------|----------|-------|-----------|----------|-----------------------------|
+|DCache(dc_ram.v) |             | Signal   | 32bit | 2^10=1024 |   1bit   | ram part of Data Cache      |
+|DCache(dc_tag.v) |             | Signal   | 21bit | 2^8 =256  |   1bit   | tag part of Data Cache      |
+|-----------------|-------------|----------|-------|-----------|----------|-----------------------------|
+|ICache(ic_ram.v) |             | Signal   | 32bit | 2^7 = 128 |   1bit   | ram part of Inst Cache      |
+|ICache(ic_tag.v) |             | Signal   | 24bit | 2^5 = 32  |   1bit   | tag part of Inst Cache      |
+|-----------------|-------------|----------|-------|-----------|----------|-----------------------------|
+
+
+supply memory info
+1 or1200_ dc_ram
+2 or1200_dpram
+3 or1200_dpram_32x32
+4 or1200_dpram256x32
+5 
